@@ -337,7 +337,7 @@ func ToLevel(s string) (Level, error) {
 	case "disabled", "off":
 		return Disabled, nil
 	default:
-		return NoLevel, fmt.Errorf("unknown log level: %s", s)
+		return NoLevel, fmt.Errorf("%w: %s", ErrUnknownLevel, s)
 	}
 }
 
